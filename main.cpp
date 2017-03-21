@@ -13,6 +13,8 @@
 #include <iomanip>
 #include <stdio.h>
 #include <ctype.h>
+#include <regex>
+#include "polylex.h"
 
 using namespace std;
 
@@ -143,7 +145,6 @@ int fileParser(string &filename){
 		
 		if(!line.length()) continue;
 		
-		
 	}
 	
 	return 0;
@@ -154,13 +155,10 @@ int stdinParser(){
 	int wordCount = 0;
 	int charCount = 0;
 
-
 	while (getline(cin, line)) {
 		if(cin.eof()) break;
 
 	}
-
-
 
 	return 0;
 }
@@ -187,7 +185,8 @@ int main(int argc, const char * argv[]) {
     		fileParser(file);
     	}
     }
-
+   //  Token thing = *new Token(ID, "Garbage");
+  	// cout<< thing.getType();
     printResults();
 
     return 0;
